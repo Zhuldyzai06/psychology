@@ -1,0 +1,151 @@
+[00:57, 23.02.2025] Вундеркинг: <!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Өзіңді Таны – Психологиялық Тест</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+            transition: background-color 0.5s ease-in-out;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 50%;
+            margin: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+        button {
+            background-color: #007bff;
+  …
+[01:01, 23.02.2025] Вундеркинг: <!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Өзіңді таны - Психологиялық тест</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background: #e3f2fd;
+            border-radius: 5px;
+            display: none;
+        }
+        .animate {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container animate">
+        <h2>Өзіңді таны - Психологиялық тест</h2>
+        <p>Өзің туралы көбірек білу үшін 15 сұраққа жауап беріңіз.</p>
+        <div id="quiz"></div>
+        <button id="submit">Жауап беру</button>
+        <div id="result" class="result"></div>
+        <button id="restart" style="display: none;">Қайта оралу</button>
+    </div>
+    <script>
+        const questions = [
+            {question: "Сіз шешім қабылдағанда қандай тәсілді қолданасыз?", options: ["Логикаға сүйенемін", "Сезіміме сүйенемін"]},
+            {question: "Сіз қалай демалғанды ұнатасыз?", options: ["Жалғыздықта", "Достарыммен"]},
+            {question: "Сіз қандай ортада өзіңізді жайлы сезінесіз?", options: ["Тыныш ортада", "Адам көп жерде"]},
+            {question: "Сіз жұмысты қалай орындайсыз?", options: ["Жоспар құрып", "Тез шешім қабылдап"]},
+            {question: "Сіз үшін маңыздысы қандай?", options: ["Тұрақтылық", "Жаңашылдық"]},
+            {question: "Стресті қалай жеңесіз?", options: ["Спортпен айналысамын", "Достарыммен сөйлесемін"]},
+            {question: "Жұмысты қалай атқарасыз?", options: ["Жоспармен", "Шабытпен"]},
+            {question: "Қиындыққа тап болғанда не істейсіз?", options: ["Ойланып, шешемін", "Бірден әрекет етемін"]},
+            {question: "Сізге қайсысы жақын?", options: ["Лидер болу", "Команданың мүшесі болу"]},
+            {question: "Сіз қандайсыз?", options: ["Тиянақты", "Эмоционалды"]},
+            {question: "Сізге маңыздысы не?", options: ["Дәлдік", "Шығармашылық"]},
+            {question: "Қандай кітаптарды ұнатасыз?", options: ["Ғылыми", "Көркем әдебиет"]},
+            {question: "Қалай шешім қабылдайсыз?", options: ["Талдау арқылы", "Ішкі сезім арқылы"]},
+            {question: "Өзіңізді қалай сипаттайсыз?", options: ["Ұйымдасқан", "Креативті"]},
+            {question: "Сізге қандай жұмыс түрі ыңғайлы?", options: ["Жоспарланған", "Шабытқа негізделген"]},
+        ];
+
+        let index = 0;
+        let score = 0;
+
+        function showQuestion() {
+            if (index < questions.length) {
+                document.getElementById("quiz").innerHTML = `
+                    <p>${questions[index].question}</p>
+                    <button onclick="answer(0)">${questions[index].options[0]}</button>
+                    <button onclick="answer(1)">${questions[index].options[1]}</button>
+                `;
+            } else {
+                showResult();
+            }
+        }
+
+        function answer(choice) {
+            if (choice === 0) {
+                score++;
+            }
+            index++;
+            showQuestion();
+        }
+
+        function showResult() {
+            let resultText = score > 7 ? "Сіз – жоспарлаушы! Сіз әрқашан тәртіп пен дәлдікке мән бересіз." : "Сіз – шығармашыл жан! Сізге еркіндік пен жаңашылдық маңызды.";
+            let motivation = [
+                "Табыстың кілті – үздіксіз даму!",
+                "Өзіңді тану – ең үлкен жетістік.",
+                "Адам мүмкіндігінің шегі жоқ!"
+            ];
+            let famousQuotes = [
+                "З.Фрейд: \"Сен өзіңді өзгертсең, әлем де өзгереді.\"",
+                "К.Юнг: \"Тұлғаның дамуы – өмір бойы тоқтамайтын процесс.\"",
+                "Д. Карнеги: \"Өзіңді түсінгенде ғана басқаларды түсіне аласың.\""
+            ];
+            document.getElementById("result").innerHTML = `<h3>${resultText}</h3>
+                <p><b>Мотивация:</b> ${motivation[Math.floor(Math.random() * motivation.length)]}</p>
+                <p><b>Данышпандар сөзі:</b> ${famousQuotes[Math.floor(Math.random() * famousQuotes.length)]}</p>`;
+            document.getElementById("quiz").style.display = "none";
+            document.getElementById("submit").style.display = "none";
+            document.getElementById("result").style.display = "block";
+            document.getElementById("restart").style.display = "block";
+        }
+
+        document.getElementById("submit").addEventListener("click", showQuestion);
+        document.getElementById("restart").addEventListener("click", function() { location.reload(); });
+    </script>
+</body>
+</html>
